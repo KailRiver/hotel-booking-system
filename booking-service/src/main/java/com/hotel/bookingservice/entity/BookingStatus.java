@@ -1,4 +1,7 @@
 package com.hotel.bookingservice.entity;
 
-public class BookingStatus {
+public enum BookingStatus {
+    PENDING,
+    CONFIRMED,
+    CANCELLED
 }

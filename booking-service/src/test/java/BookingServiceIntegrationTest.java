@@ -1,5 +1,3 @@
-package com.hotel.bookingservice.integration;
-
 import com.hotel.bookingservice.BookingServiceApplication;
 import com.hotel.bookingservice.dto.BookingRequest;
 import com.hotel.bookingservice.entity.Booking;

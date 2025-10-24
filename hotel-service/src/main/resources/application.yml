@@ -1,0 +1,55 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: hotel-service
+  security:
+    enabled: true
+  datasource:
+    url: jdbc:h2:mem:hoteldb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+# Actuator configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+      base-path: /actuator
+  endpoint:
+    health:
+      show-details: always
+      show-components: always
+
+jwt:
+  secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+
+# Eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    enabled: true
+  instance:
+    prefer-ip-address: true
+
+logging:
+  level:
+    com.hotel.hotelservice: DEBUG
+    org.springframework.security: DEBUG
+    org.hibernate.SQL: DEBUG

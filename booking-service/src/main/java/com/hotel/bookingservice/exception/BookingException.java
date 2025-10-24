@@ -1,4 +1,8 @@
 package com.hotel.bookingservice.exception;
 
-public class BookingException {
+public class BookingException extends RuntimeException {
+
+    public BookingException(String message) {
+        super(message);
+    }
 }
